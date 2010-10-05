@@ -106,10 +106,10 @@
 (setq wl-summary-width 150)
 
 ;;(add-to-list 'load-path "/usr/share/emacs23/site-lisp/mu-cite/")
-;; (require 'mu-cite)
-;; (add-hook 'mail-citation-hook 'mu-cite-original)
-;; (setq mu-cite-top-format
-;; '("On " date "," full-name " wrote:\n"))
+(require 'mu-cite)
+(add-hook 'mail-citation-hook 'mu-cite-original)
+(setq mu-cite-top-format
+'("On " date "," full-name " wrote:\n"))
 
 ;;{This code seems to have been written by James Shuttleworth to drop his .sig at the bottom of replies
 
