@@ -75,24 +75,23 @@
 )
 
 
+;; When I want to reply to someone, I don't need to CC myself, but I did like the previous mailing list reply behaviour
+;;
 ;; from a WL-mailinglist post by David Bremner
 ;; May want to uncomment code in the next couple of blocks for replying to mailing lists.
 ;; Default behaviour where I define my own mailing lists may be better
-
 ;; Invert behaviour of with and without argument replies.
 ;; just the author
-;; (setq wl-draft-reply-without-argument-list
-;;   '(("Reply-To" ("Reply-To") nil nil)
-;;      ("Mail-Reply-To" ("Mail-Reply-To") nil nil)
-;;      ("From" ("From") nil nil)))
+(setq wl-draft-reply-without-argument-list
+  '(("Reply-To" ("Reply-To") nil nil)
+     ("Mail-Reply-To" ("Mail-Reply-To") nil nil)
+     ("From" ("From") nil nil)))
 
-
-;; bombard the world
-;; (setq wl-draft-reply-with-argument-list
-;;   '(("Followup-To" nil nil ("Followup-To"))
-;;      ("Mail-Followup-To" ("Mail-Followup-To") nil ("Newsgroups"))
-;;      ("Reply-To" ("Reply-To") ("To" "Cc" "From") ("Newsgroups"))
-;;      ("From" ("From") ("To" "Cc") ("Newsgroups"))))
+(setq wl-draft-reply-with-argument-list
+  '(("Followup-To" nil nil ("Followup-To"))
+     ("Mail-Followup-To" ("Mail-Followup-To") nil ("Newsgroups"))
+     ("Reply-To" ("Reply-To") ("To" "Cc" "From") ("Newsgroups"))
+     ("From" ("From") ("To" "Cc") ("Newsgroups"))))
 
 
 ;;from http://www.emacswiki.org/emacs/WlFaq
