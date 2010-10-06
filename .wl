@@ -102,7 +102,8 @@
 ;; Mass of settings from http://dis-dot-dat.blogspot.com/2010/04/my-wanderlust-setup
 ;; Also seems he took a lot from Emacs-fu!
 ;;-----------------------------------
-(setq wl-summary-line-format "%n%T%P %D/%M (%W) %h:%m %t%[%25(%c %f%) %] %s")
+(setq wl-summary-line-format "%n%T%P %D/%M %h:%m %t%[%20(%c %f%) %] %s")
+;;(setq wl-summary-line-format "%n%T%P %D/%M (%W) %h:%m %t%[%25(%c %f%) %] %s")
 (setq wl-summary-width 150)
 
 ;;(add-to-list 'load-path "/usr/share/emacs23/site-lisp/mu-cite/")
@@ -227,12 +228,16 @@ mu-cite-prefix-format (quote (">")) ; default to >, no questions asked, rather t
  (autoload 'fill-flowed "flow-fill")
  (add-hook 'mime-display-text/plain-hook
  	     (lambda ()
- 	           (when (string= "flowed"
- 				     (cdr (assoc "format"
- 						        (mime-content-type-parameters
- 							 (mime-entity-content-type entity)))))
- 		           (fill-flowed))))
+ 	           ;; (when (string= "flowed"
+ 		   ;; 		     (cdr (assoc "format"
+ 		   ;; 				        (mime-content-type-parameters
+ 		   ;; 					 (mime-entity-content-type entity)))))
+ 		           (visual-line-mode)
+ 		           (fill-flowed)))
 ;; (mime-edit-insert-tag "text" "plain" "; format=flowed")
+
+
+
 
 ;; from http://www.huoc.org/hacks/dotemacs/wlrc.el
 ;;;; Biff
